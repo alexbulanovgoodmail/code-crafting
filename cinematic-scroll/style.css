@@ -1,0 +1,228 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  background-color: #0e0e0f;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size:
+    100px 100px,
+    100px 100px,
+    20px 20px,
+    20px 20px;
+  background-position:
+    -2px -2px,
+    -2px -2px,
+    -1px -1px,
+    -1px -1px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.scroll-section {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+}
+
+.benefit-section {
+  padding: 8rem 0 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.col-center {
+  display: flex;
+  justify-content: center;
+}
+
+.paragraph-animation {
+  max-width: 460px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  .line {
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+.title-group {
+  margin: 6rem 0 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.clip-title {
+  margin: auto;
+  border: 1px solid #222123;
+  width: fit-content;
+  padding: 1.3rem 2.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  opacity: 0;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+}
+
+.benefit-section .first-title {
+  position: relative;
+  z-index: 10;
+  rotate: 3deg;
+}
+
+.benefit-section .second-title {
+  rotate: -1deg;
+}
+
+.benefit-section .third-title {
+  position: relative;
+  z-index: 10;
+  rotate: 1deg;
+}
+
+.benefit-section .fourth-title {
+  rotate: -5deg;
+}
+
+.more-text {
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+.overlay-box {
+  margin-top: 5vh;
+}
+
+.video-wrapper {
+  border: 1px solid transparent;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(100% at 50% 50%);
+
+  @media screen and (min-width: 768px) {
+    clip-path: circle(6% at 50% 50%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.video-box video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+.spin-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  width: 30vw;
+  transform: translate(-50%, -50%);
+  animation: spin 12s linear infinite;
+
+  @media screen and (min-width: 768px) {
+    width: 15vw;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.play-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.play-circle {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18vw;
+  height: 18vw;
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.3);
+
+  @media screen and (min-width: 768px) {
+    width: 9vw;
+    height: 9vw;
+  }
+}
+
+.play-circle img {
+  width: 6vw;
+  margin-left: 0.4vw;
+
+  @media screen and (min-width: 768px) {
+    width: 3vw;
+  }
+}
